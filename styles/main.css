@@ -1,0 +1,132 @@
+* {
+  padding: 0;
+  margin: 0;
+  color: #ffffffff;
+}
+
+html {
+  font-family: 'Amiko', sans-serif;
+  background: linear-gradient(90deg, #ccd8f0 28%, #8b95c9 84%);
+}
+
+.weather__inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+.current {
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.current__city {
+  font-weight: 300;
+  font-size: 2em;
+}
+
+.current__icon {
+  margin-top: -20px;
+  margin-bottom: -20px;
+}
+
+.current__desc {
+  font-size: 1.5em;
+}
+
+.current__temp {
+  font-weight: 400;
+  font-size: 3em;
+}
+
+.forecast {
+  border: 1px solid;
+  box-shadow: inset 0px -201px 98px rgba(255, 255, 255, 0.13);
+  border-radius: 40px;
+  background: linear-gradient(90deg, #ccd8f0 28%, #8b95c9 84%);
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  margin-bottom: 2em;
+}
+
+.forecast__item {
+  text-align: center;
+}
+
+.forecast__temp, .forecast__icon {
+  margin-bottom: 0.5em;
+}
+
+.forecast__temp {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 2em;
+}
+
+.forecast__time {
+  font-weight: 300;
+  font-size: 1em;
+}
+
+.forecast__icon {
+  width: 40px;
+  height: 40px;
+}
+
+.details__row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1em;
+}
+
+.details__item {
+  flex: 1;
+}
+
+.details__name {
+  margin-bottom: 1em;
+}
+
+.details__value {
+  font-size: 1.5em;
+}
+
+.weather {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.icon__sun,
+.icon__sun_cloud,
+.icon__cloud,
+.icon__rain_cloud,
+.icon__snow,
+.icon__thunder {
+  background-size: 40px;
+  background-repeat: no-repeat;
+}
+
+.icon__sun {
+  background-image: url("../images/sun.png");
+}
+
+.icon__sun_cloud {
+  background-image: url("../images/sun&cloud.png");
+}
+
+.icon__cloud {
+  background-image: url("../images/cloud.png");
+}
+
+.icon__rain_cloud {
+  background-image: url("../images/rain&cloud.png");
+}
+
+.icon__snow {
+  background-image: url("../images/snow.png");
+}
+
+.icon__thunder {
+  background-image: url("../images/thunder.png");
+}

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,69 +14,35 @@
 </head>
 <body>
     <div class="weather">
-        <div class="weather__inner">
-            <div class="current">
-                <div class="current__city">Moscow</div>
-                <div class="current__icon"><img src="./images/white fluffy cloud.png" alt="cloud" width="180px" height="180px"></div>
-                <div class="current__desc">Sun</div>
-                <div class="current__temp">15°</div>
+        <div id="root"><img src="./images/ghost.gif" alt="loader" class="loader"></div>
+        
+        <div class="popup" id="popup">
+            <form action="GET" class="form" id="form">
+              <div class="form-group">
+                <input
+                  type="text"
+                  value=""
+                  name="city"
+                  class="form-input"
+                  id="text-input"
+                  placeholder="London"
+                  required
+                />
+                <input
+                  type="submit"
+                  class="form-submit"
+                  id="submit-button"
+                  value="OK"
+                />
+              </div>
+            </form>
+    
+            <div class="popup-close" id="close">
+              <span></span>
             </div>
-            <div class="forecast">
-                <div class="forecast__item">
-                    <div class="forecast__icon icon__sun"></div>
-                    <div class="forecast__temp">25°</div>
-                    <div class="forecast__time">20:00</div>
-                </div>
-                <div class="forecast__item">
-                    <div class="forecast__icon icon__sun_cloud"></div>
-                    <div class="forecast__temp">25°</div>
-                    <div class="forecast__time">20:00</div>
-                </div>
-                <div class="forecast__item">
-                    <div class="forecast__icon icon__thunder"></div>
-                    <div class="forecast__temp">25°</div>
-                    <div class="forecast__time">20:00</div>
-                </div>
-                <div class="forecast__item">
-                    <div class="forecast__icon icon__thunder"></div>
-                    <div class="forecast__temp">25°</div>
-                    <div class="forecast__time">20:00</div>
-                </div>
-                <div class="forecast__item">
-                    <div class="forecast__icon icon__snow"></div>
-                    <div class="forecast__temp">25°</div>
-                    <div class="forecast__time">20:00</div>
-                </div>
-                <div class="forecast__item">
-                    <div class="forecast__icon icon__thunder"></div>
-                    <div class="forecast__temp">25°</div>
-                    <div class="forecast__time">20:00</div>
-                </div>
-            </div>
-            <div class="details">
-                <div class="details__row">
-                    <div class="details__item feelslike">
-                        <div class="details__name">Feels like</div>
-                        <div class="details__value">22°</div>
-                    </div>
-                    <div class="details__item pressure">
-                        <div class="details__name">Pressure</div>
-                        <div class="details__value">760 mm Hg</div>
-                    </div>
-                </div>
-                <div class="details__row">
-                    <div class="details__item humidity">
-                        <div class="details__name">Humidity</div>
-                        <div class="details__value">50%</div>
-                    </div>
-                    <div class="details__item wind">
-                        <div class="details__name">Wind</div>
-                        <div class="details__value">14 m/s</div>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
     </div>
-    <script src="./js/weather.js"></script>
+    <script src="./weather.js"></script>
 </body>
 </html>

@@ -1,16 +1,20 @@
 const link =" http://api.weatherstack.com/current?access_key=3e7d9873f71503db3cce590759f94fc8"
 
-const root = document.getElementById('root');
+const popup = document.getElementById("popup");
+// const textInput = document.getElementById("text-input");
+// const form = document.getElementById("form");
+const root = document.getElementById("root");
+
 let store = {
     city: "Moscow",
     temperature: 0,
     observationTime: "00:00 AM",
     description: "",
     properties: {
-        feelslike: 0,
-        pressure: 0,
-        humidity: 0,
-        windSpeed: 0,
+        feelslike: {},
+        pressure: {},
+        humidity: {},
+        windSpeed: {},
     }
 }
 
@@ -39,14 +43,27 @@ console.log(data);
         observationTime,
         description: description[0],
         properties: {
-            feelslike: `${feelslike}°`,
-            pressure: `${pressure}mm Hg`,
-            humidity: `${humidity}%`,
-            windSpeed: `${windSpeed}m/s`,
+            feelslike: {
+                title: "Feels like",
+                value: `${feelslike}°`,
+            },
+            pressure: {
+                title: "Pressure",
+                value: `${pressure} mm Hg`,
+            },
+            humidity: {
+                title: "Humidity",
+                value: `${humidity}%`,
+            },
+            windSpeed: {
+                title: "Wind Speed",
+                value: `${windSpeed}m/s`,
+            },
         }
     }
 
     renderComponent();
+
 }
 
 const getImage = (description) => {
@@ -69,46 +86,53 @@ const getImage = (description) => {
 }
 
 const renderProperties = (properties) => {
-    console.log(properties);
-    return `<div class="details">
-    <div class="details__row">
-        <div class="details__item feelslike">
-            <div class="details__name">Feels like</div>
-            <div class="details__value">${feelslike}</div>
-        </div>
-        <div class="details__item pressure">
-            <div class="details__name">Pressure</div>
-            <div class="details__value">${pressure}</div>
-        </div>
-    </div>
-    <div class="details__row">
-        <div class="details__item humidity">
-            <div class="details__name">Humidity</div>
-            <div class="details__value">${humidity}</div>
-        </div>
-        <div class="details__item wind">
-            <div class="details__name">Wind</div>
-            <div class="details__value">${wind_speed}</div>
-        </div>
-    </div>
-</div>`;
-}
-
+    return Object.values(properties).map(({title, value}) => {
+        return `<div class="properties">
+            <div class="properties__item">
+                <div class="properties__name">${title}</div>
+                <div class="properties__value">${value}</div>
+            </div>
+        </div>`;
+    })
+    .join("");
+    
+};
+// return `<div class="details">
+//     <div class="details__row">
+//         <div class="details__item feelslike">
+//             <div class="details__name">Feels like</div>
+//             <div class="details__value">${feelslike}</div>
+//         </div>
+//         <div class="details__item pressure">
+//             <div class="details__name">Pressure</div>
+//             <div class="details__value">${pressure}</div>
+//         </div>
+//     </div>
+//     <div class="details__row">
+//         <div class="details__item humidity">
+//             <div class="details__name">Humidity</div>
+//             <div class="details__value">${humidity}</div>
+//         </div>
+//         <div class="details__item wind">
+//             <div class="details__name">Wind</div>
+//             <div class="details__value">${wind_speed}</div>
+//         </div>
+//     </div>
+// </div>`;
 const getDate = () => {
     var now = new Date();
     var days =["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     var months =["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-    return days[now.getDay()] + " " + now.getDay() + " " + months[now.getMonth()-1];
+    return days[now.getDay()] + " " + now.getDate() + " " + months[now.getMonth()];
 }
 
 const markup = () => {
     const {city, description, observationTime, temperature, properties} = store;
 
     return `<div class="weather">
-        <div id="root"><img src="./images/ghost.gif" alt="loader" class="loader"></div>
         <div class="weather__inner">
             <div class="current">
-                <div class="current__city">${city}</div>
+                <div class="current__city" id="city">${city}</div>
                 <div class="current__time"><time>${getDate()}</time></div>
                 <div class="current__icon"><img src="./images/white fluffy cloud.png" alt="cloud" width="180px" height="180px"></div>
                 <div class="current__temp">${temperature}°</div>
@@ -150,8 +174,18 @@ const markup = () => {
         </div>
     </div>`;
 }
+const togglePopupClass = () => {
+    popup.classList.toggle("active");
+};
 
 const renderComponent = () => {
     root.innerHTML = markup();
+
+    const city = document.getElementById("city");
+    city.addEventListener("click", togglePopupClass);
 }
+
+// form.addEventListener("submit", handleSubmit);
+// textInput.addEventListener("input", handleInput);
+
 fetchData();

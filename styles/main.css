@@ -38,10 +38,6 @@ html {
   z-index: 9;
 }
 
-.popup.active {
-  transform: translateX(0);
-}
-
 .popup-close {
   position: absolute;
   top: 20px;
@@ -73,6 +69,10 @@ html {
   left: 0;
 }
 
+.popup.active {
+  transform: translateX(0);
+}
+
 .form {
   width: 100%;
 }
@@ -86,7 +86,7 @@ html {
 .form-input {
   border: none;
   border-bottom: 2px solid #eee;
-  color: #fff;
+  color: #8b95c9;
   background: transparent;
   outline: none;
   font-size: 19px;

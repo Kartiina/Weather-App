@@ -1,7 +1,7 @@
 # Weather App
 
 ### Создание веб-приложения прогноз погоды ###
-Проект был написан в процессе изучения языка JS. 
+Проект был написан в процессе изучения языка JavaScript. 
 Для реализации данной идеи было использовано API прогноза погоды, собственный макет Figma и JS.
 ##
 ![First Screen](https://github.com/Kartiina/ScreenShots/blob/main/first.png "Start page")
@@ -22,3 +22,5 @@ const getDate = () => {
 ![2nd Screen](https://github.com/Kartiina/ScreenShots/blob/main/change.png "If you want to change city")
 Чтобы изменить место прогноза нужно нажать на название города и ввести новое в строку. 
 >Если город введен неверно или не введен вовсе, прогноз останется тем же.
+#
+![3th Screen](https://github.com/Kartiina/ScreenShots/blob/main/second.png "Weather in Kursk")

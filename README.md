@@ -24,3 +24,7 @@ const getDate = () => {
 >Если город введен неверно или не введен вовсе, прогноз останется тем же.
 #
 ![3th Screen](https://github.com/Kartiina/ScreenShots/blob/main/second.png "Weather in Kursk")
+
+## tnx for your attention!👻
+
+**@3d.karttina**

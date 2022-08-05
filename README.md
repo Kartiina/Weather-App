@@ -4,7 +4,7 @@
 Проект был написан в процессе изучения языка JavaScript. 
 Для реализации данной идеи было использовано API прогноза погоды, собственный макет Figma и JS.
 ##
-![First Screen](https://github.com/Kartiina/ScreenShots/blob/main/first.png "Start page")
+![First Screen](https://github.com/Kartiina/Weather-App/blob/master/screens/first.png "Start page")
 >В зависимости от описания погоды в прогнозе подключается соответствующая иконка или иконка "Облачно" по умолчанию
 >- Представление даты в виде: "23.06.2022" мне не нравилось, поэтому я решила переделать его в виде: "Четверг 23 Июня". Реализация с помощью функции:
 ```js
@@ -19,11 +19,11 @@ const getDate = () => {
 
 
 #
-![2nd Screen](https://github.com/Kartiina/ScreenShots/blob/main/change.png "If you want to change city")
+![2nd Screen](https://github.com/Kartiina/Weather-App/blob/master/screens/change.png "If you want to change city")
 Чтобы изменить место прогноза нужно нажать на название города и ввести новое в строку. 
 >Если город введен неверно или не введен вовсе, прогноз останется тем же.
 #
-![3th Screen](https://github.com/Kartiina/ScreenShots/blob/main/second.png "Weather in Kursk")
+![3th Screen](https://github.com/Kartiina/Weather-App/blob/master/screens/second.png "Weather in Kursk")
 
 ## tnx for your attention!👻
 
